@@ -10,22 +10,24 @@ function App() {
 
   useEffect(() => {
     getQuote();
+    setTimeout(() => {
+      console.log("hii");
+      getNewQuote();
+    }, 8000);
   }, [])
 
-  useEffect(()=>{
-    getNewQuote()
-  },
-    [quotesData])
+  const  getQuote = async () => {
 
-
-  const getQuote = () => {
-    fetch('https://type.fit/api/quotes')
-      .then(response => response.json())
-      .then(data => setQuotesData(data))
+    const response = await fetch("https://type.fit/api/quotes")
+    const data = await response.json()
+    setQuotesData(data)
+    setQuote(data[Math.floor(Math.random() * data.length)].text)
+    setAuthor(data[Math.floor(Math.random() * data.length)].author)
   }
 
   const getNewQuote = () => {
-    if (quotesData.length > 0) {
+    console.log(quotesData.length);
+    if (quotesData) {
       let randomQuote = quotesData[Math.floor(Math.random() * quotesData.length)];
       console.log("hi");
       setQuote(randomQuote.text);
