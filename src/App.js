@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App bg-slate-900 sm:h-screen flex items-center justify-center ">
       <div className="card-container bg-sky-500 rounded-md w-screen h-screen flex items-center justify-center md:w-[50rem] md:h-[28rem] md:-m-5 ">
-        <div className="card-container flex justify-between h-[21rem] w-11/12 sm:w-3/4 bg-gray-100 rounded-md flex-col shadow-lg -mt-5 sm:mt-0">
+        <div className="card-container flex justify-between h-[21rem] w-11/12 sm:w-3/4 bg-gray-100 rounded-md flex-col shadow-lg -mt-40 ">
           <div className="box pt-8 px-8 overflow-hidden">
             <FaQuoteLeft className='text-start text-4xl text-gray-400' />
             <h5 className='text-gray-800 text-center text-xl sm:text-2xl mt-6' style={{ fontFamily: '"Satisfy", cursive' }}>
