@@ -39,14 +39,14 @@ function App() {
 
   return (
     <div className="App bg-slate-900 h-screen flex items-center justify-center ">
-      <div className="card-container bg-sky-500 rounded-md h-2/3 w-2/4 flex items-center justify-center">
-        <div className="card-container flex justify-between  bg-gray-100 rounded-md h-2/3 w-3/5 flex-col shadow-lg">
+      <div className="card-container bg-sky-500 rounded-md w-screen h-screen md:w-[50rem] md:h-[28rem] flex items-center justify-center">
+        <div className="card-container flex justify-between h-[21rem] w-11/12 sm:w-3/4 bg-gray-100 rounded-md flex-col shadow-lg">
           <div className="box pt-8 px-8 overflow-hidden">
             <FaQuoteLeft className='text-start text-4xl text-gray-400' />
-            <h5 className='text-gray-800 text-center text-xl mt-6' style={{ fontFamily: '"Satisfy", cursive' }}>
+            <h5 className='text-gray-800 text-center text-xl sm:text-2xl mt-6' style={{ fontFamily: '"Satisfy", cursive' }}>
               {(quote === null) ? "Quote is Here!" : quote}
             </h5>
-            <p className="text-sm text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "Ayush Bulbule" : author}</p>
+            <p className="text-sm sm:text-md text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "Ayush Bulbule" : author}</p>
           </div>
           <p onClick={() => { getNewQuote(); }} className='bg-purple-700 cursor-pointer w-full text-center p-2 text-white font-medium '>New Quote</p>
         </div>
