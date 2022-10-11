@@ -1,6 +1,7 @@
 import './App.css';
 import { FaQuoteLeft } from 'react-icons/fa'
 import { useEffect, useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
 
 function App() {
 
@@ -44,9 +45,18 @@ function App() {
           <div className="box pt-8 px-8 overflow-hidden">
             <FaQuoteLeft className='text-start text-4xl text-gray-400' />
             <h5 className='text-gray-800 text-center text-xl mt-6' style={{ fontFamily: '"Satisfy", cursive' }}>
-              {(quote === null) ? "Quote is Here!" : quote}
+              {(quote === null) ? <TailSpin
+                height="80"
+                width="80"
+                color="#12a5e9"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{marginLeft:"40%"}}
+                wrapperClass=""
+                visible={true}
+              /> : quote}
             </h5>
-            <p className="text-sm text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "Ayush Bulbule" : author}</p>
+            <p className="text-sm text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "" : author}</p>
           </div>
           <p onClick={() => { getNewQuote(); }} className='bg-purple-700 cursor-pointer w-full text-center p-2 text-white font-medium '>New Quote</p>
         </div>
