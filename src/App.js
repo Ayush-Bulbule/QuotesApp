@@ -17,7 +17,7 @@ function App() {
     }, 8000);
   }, [])
 
-  const  getQuote = async () => {
+  const getQuote = async () => {
 
     const response = await fetch("https://type.fit/api/quotes")
     const data = await response.json()
@@ -39,9 +39,12 @@ function App() {
 
 
   return (
-    <div className="App bg-slate-900 h-screen flex items-center justify-center ">
-      <div className="card-container bg-sky-500 rounded-md h-2/3 w-2/4 flex items-center justify-center">
-        <div className="card-container flex justify-between  bg-gray-100 rounded-md h-2/3 w-3/5 flex-col shadow-lg">
+    <div className="App sm:h-screen flex items-center justify-center ">
+      <div className="absolute z-0">
+        <img src="background.avif" className="h-screen w-screen"></img>
+      </div>
+      <div className="card-container z-50 bg-opacity-20 bg-sky-500 md:bg-transparent rounded-md w-screen h-screen flex items-center justify-center md:w-[50rem] md:h-[28rem] ">
+        <div className="card-container z-50 bg-opacity-100 flex justify-between border-4 border-red-500 h-[21rem] w-11/12 sm:w-3/4 bg-gray-100 rounded-md flex-col shadow-lg">
           <div className="box pt-8 px-8 overflow-hidden">
             <FaQuoteLeft className='text-start text-4xl text-gray-400' />
             <h5 className='text-gray-800 text-center text-xl mt-6' style={{ fontFamily: '"Satisfy", cursive' }}>
@@ -51,14 +54,14 @@ function App() {
                 color="#12a5e9"
                 ariaLabel="tail-spin-loading"
                 radius="1"
-                wrapperStyle={{marginLeft:"40%"}}
+                wrapperStyle={{ marginLeft: "40%" }}
                 wrapperClass=""
                 visible={true}
               /> : quote}
             </h5>
-            <p className="text-sm text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "" : author}</p>
+            <p className="text-sm sm:text-md text-gray-600 text-right mt-4" style={{ fontFamily: '"Poppins",sans-seri' }}>{(author === null) ? "Ayush Bulbule" : author}</p>
           </div>
-          <p onClick={() => { getNewQuote(); }} className='bg-purple-700 cursor-pointer w-full text-center p-2 text-white font-medium '>New Quote</p>
+          <p onClick={() => { getNewQuote(); }} className='bg-purple-700 cursor-pointer w-full text-center p-2 text-white font-medium hover:bg-purple-800'>New Quote</p>
         </div>
       </div>
 
